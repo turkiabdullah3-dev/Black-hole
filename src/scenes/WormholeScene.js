@@ -100,6 +100,10 @@ export class WormholeScene {
           <span style="color: #00d9ff;">Tidal Forces:</span>
           <span style="color: #ff6b9d;" id="tidal-forces">Moderate</span>
         </div>
+        <div>
+          <span style="color: #00d9ff;">Render Performance:</span>
+          <span style="color: #ff6b9d;" id="render-fps">60 FPS</span>
+        </div>
       </div>
       <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #00d9ff; font-size: 10px; color: #00a8cc; line-height: 1.4;">
         <p style="margin: 0 0 8px 0; color: #ff6b9d; font-weight: bold;">📐 PHYSICS EXPLAINED</p>
@@ -515,6 +519,7 @@ export class WormholeScene {
     const curvatureEl = document.getElementById('curvature');
     const timeDilationEl = document.getElementById('time-dilation');
     const tidalForcesEl = document.getElementById('tidal-forces');
+    const fpsEl = document.getElementById('render-fps');
     
     if (throatRadiusEl) {
       const radius = this.physics.throatRadius || 1.5;
@@ -553,6 +558,32 @@ export class WormholeScene {
       else if (tidalAccel > 0.2) level = 'Moderate';
       
       tidalForcesEl.textContent = `${level} (${tidalAccel.toFixed(3)})`;
+    }
+    
+    if (fpsEl) {
+      // Calculate FPS from frame times
+      if (!this.lastFrameTime) this.lastFrameTime = performance.now();
+      const now = performance.now();
+      const deltaTime = now - this.lastFrameTime;
+      this.lastFrameTime = now;
+      
+      if (!this.frameTimeSamples) this.frameTimeSamples = [];
+      this.frameTimeSamples.push(deltaTime);
+      
+      if (this.frameTimeSamples.length > 60) {
+        this.frameTimeSamples.shift();
+      }
+      
+      const avgFrameTime = this.frameTimeSamples.reduce((a, b) => a + b, 0) / this.frameTimeSamples.length;
+      const fps = Math.round(1000 / avgFrameTime);
+      
+      // Color code FPS
+      let fpsColor = '#00ff00';
+      if (fps < 45) fpsColor = '#ff6b9d';
+      else if (fps < 55) fpsColor = '#ffaa00';
+      
+      fpsEl.textContent = `${fps} FPS`;
+      fpsEl.style.color = fpsColor;
     }
   }
 
