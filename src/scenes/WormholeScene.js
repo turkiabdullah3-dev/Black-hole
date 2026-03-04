@@ -223,6 +223,20 @@ export class WormholeScene {
     this.renderer.toneMapping = THREE.ReinhardToneMapping;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
 
+    // Initialize composer (even if not using post-processing)
+    this.composer = new EffectComposer(this.renderer);
+    const renderPass = new RenderPass(this.scene, this.camera);
+    this.composer.addPass(renderPass);
+    this.bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight),
+      0.3, // strength
+      0.4, // radius
+      0.85 // threshold
+    );
+    if (this.usePostProcessing) {
+      this.composer.addPass(this.bloomPass);
+    }
+
     // Create realistic wormhole visualization
     this.realisticRenderer = new RealisticWormholeRenderer(this.physics, this.scene);
     
@@ -672,6 +686,9 @@ export class WormholeScene {
     }
     if (this.realisticRenderer) {
       this.realisticRenderer.dispose();
+    }
+    if (this.composer) {
+      this.composer.dispose();
     }
   }
 }
