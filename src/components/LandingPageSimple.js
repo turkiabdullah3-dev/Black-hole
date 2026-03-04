@@ -28,11 +28,11 @@ export class LandingPageSimple {
     
     const title = document.createElement('h1');
     title.className = 'landing-title';
-    title.textContent = 'Exploring the Geometry of Spacetime';
+    title.textContent = 'SPACETIME EXPLORER';
     
     const subtitle = document.createElement('p');
     subtitle.className = 'landing-subtitle';
-    subtitle.textContent = 'A journey through black holes and wormholes';
+    subtitle.textContent = 'Journey Through Black Holes & Wormholes';
     
     const buttonContainer = document.createElement('div');
     buttonContainer.className = 'landing-buttons';
@@ -44,18 +44,18 @@ export class LandingPageSimple {
     // Black Hole portal button
     const blackHolePortal = document.createElement('button');
     blackHolePortal.className = 'portal-button portal-left';
-    blackHolePortal.innerHTML = '<span class="portal-icon">●</span><span class="portal-label">Black Hole</span>';
+    blackHolePortal.innerHTML = '<span class="portal-icon">⚫</span><span class="portal-label">BLACK HOLE</span><span class="portal-desc">Event Horizon</span>';
     blackHolePortal.addEventListener('click', () => this.callbacks.onBlackHoleClick());
     
     // Wormhole portal button
     const wormholePortal = document.createElement('button');
     wormholePortal.className = 'portal-button portal-right';
-    wormholePortal.innerHTML = '<span class="portal-icon">◇</span><span class="portal-label">Wormhole</span>';
+    wormholePortal.innerHTML = '<span class="portal-icon">🌀</span><span class="portal-label">WORMHOLE</span><span class="portal-desc">Spacetime Tunnel</span>';
     wormholePortal.addEventListener('click', () => this.callbacks.onWormholeClick());
 
     const equationsBtn = document.createElement('button');
     equationsBtn.className = 'glow-button equations-btn';
-    equationsBtn.textContent = '∑ Equations & How It Works';
+    equationsBtn.textContent = '📐 View Physics & Equations';
     equationsBtn.addEventListener('click', () => this.callbacks.onEquationsClick());
     
     dualPortalWrapper.appendChild(blackHolePortal);
