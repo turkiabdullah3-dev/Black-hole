@@ -4,12 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spacetime Explorer</title>
-  <meta http-equiv="refresh" content="0; url=home.html">
-  <script>
-    window.location.replace('home.html');
-  </script>
 </head>
 <body>
-  <p>جاري التحويل إلى الصفحة الرئيسية...</p>
+  <div id="root"></div>
+  <script type="module">
+    import { App } from './src/index.js';
+    
+    // Get the scene parameter if it exists
+    const params = new URLSearchParams(window.location.search);
+    const scene = params.get('scene');
+    
+    if (scene === 'blackhole' || scene === 'wormhole') {
+      // Initialize app and load the scene
+      const app = new App();
+      if (scene === 'blackhole') {
+        app.renderBlackHole();
+      } else if (scene === 'wormhole') {
+        app.renderWormhole();
+      }
+    } else {
+      // Redirect to home with preserved query params
+      const queryString = window.location.search;
+      window.location.href = 'home.html' + queryString;
+    }
+  </script>
 </body>
 </html>

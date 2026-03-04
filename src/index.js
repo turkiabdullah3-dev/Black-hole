@@ -83,3 +83,5 @@ window.addEventListener('beforeunload', () => {
     window.app.dispose();
   }
 });
+
+export default App;
