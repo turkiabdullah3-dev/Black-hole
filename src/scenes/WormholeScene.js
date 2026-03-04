@@ -101,9 +101,12 @@ export class WormholeScene {
           <span style="color: #ff6b9d;" id="tidal-forces">Moderate</span>
         </div>
       </div>
-      <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #00d9ff; font-size: 11px; color: #00a8cc;">
-        <p style="margin: 0 0 5px 0;">📐 Morris-Thorne Geometry</p>
-        <p style="margin: 0;">Exotic matter required</p>
+      <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #00d9ff; font-size: 10px; color: #00a8cc; line-height: 1.4;">
+        <p style="margin: 0 0 8px 0; color: #ff6b9d; font-weight: bold;">📐 PHYSICS EXPLAINED</p>
+        <p style="margin: 0 0 5px 0;"><strong>Time Dilation:</strong><br/>α = √(1 - 2M/r)<br/>Time passes slower near throat</p>
+        <p style="margin: 0 0 5px 0;"><strong>Curvature:</strong><br/>R = 4/a²<br/>Describes spacetime bending</p>
+        <p style="margin: 0 0 5px 0;"><strong>Tidal Forces:</strong><br/>F ∝ M/r³<br/>Dangerous near throat</p>
+        <p style="margin: 0;">Morris-Thorne geometry requires exotic (negative-density) matter to keep throat open</p>
       </div>
     `;
     sceneContainer.appendChild(hudPanel);
