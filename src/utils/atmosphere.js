@@ -12,8 +12,8 @@ export class CosmicAtmosphere {
     this.time = 0;
     this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
     this.starCount = this.isMobile ? 500 : 1500;
-    this.dustCount = this.isMobile ? 300 : 900;
-    this.glowCount = this.isMobile ? 120 : 260;
+    this.dustCount = this.isMobile ? 150 : 400; // تقليل كبير
+    this.glowCount = this.isMobile ? 60 : 120; // تقليل كبير
     
     this.createAtmosphereLayers();
   }

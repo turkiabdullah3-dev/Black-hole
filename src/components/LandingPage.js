@@ -19,7 +19,7 @@ export class LandingPage {
     this.trailCounter = 0;
     this.introStartTime = 0;
     this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
-    this.starParticleCount = this.isMobile ? 500 : 1500;
+    this.starParticleCount = this.isMobile ? 300 : 800; // تقليل كبير في جزيئات النجوم
     
     this.element = this.createDOM();
     this.initThree();
@@ -105,11 +105,13 @@ export class LandingPage {
     
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
-      antialias: window.devicePixelRatio <= 1.25,
-      alpha: false
+      antialias: false,
+      alpha: false,
+      powerPreference: 'high-performance',
+      precision: 'mediump'
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1)); // تقليل pixel ratio
     this.renderer.setClearColor(0x000000, 1);
     
     // Enhanced cinematic rendering
@@ -123,7 +125,7 @@ export class LandingPage {
     this.cursorTrail = new CursorTrail(this.scene);
     
     // Black hole preview (distant focal point)
-    const bhGeometry = new THREE.SphereGeometry(8, 32, 32);
+    const bhGeometry = new THREE.SphereGeometry(8, 24, 24); // تقليل segments
     const bhMaterial = new THREE.MeshBasicMaterial({
       color: 0x000000,
       emissive: 0x1a1a2e,
