@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { LandingPage } from './components/LandingPage.js';
+import { LandingPageSimple } from './components/LandingPageSimple.js';
 import { BlackHoleScene } from './scenes/BlackHoleScene.js';
 import { WormholeScene } from './scenes/WormholeScene.js';
 import { EquationsPage } from './components/EquationsPage.js';
@@ -17,7 +17,7 @@ export class App {
 
   renderLanding() {
     this.cleanupCurrentPage();
-    this.currentPage = new LandingPage({
+    this.currentPage = new LandingPageSimple({
       onBlackHoleClick: () => this.renderBlackHole(),
       onWormholeClick: () => this.renderWormhole(),
       onEquationsClick: () => this.renderEquations()
