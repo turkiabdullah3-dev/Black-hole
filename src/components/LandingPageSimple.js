@@ -10,6 +10,7 @@ export class LandingPageSimple {
     this.camera = null;
     this.renderer = null;
     this.animationFrameId = null;
+    this.lastRenderAt = 0;
     this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
     
     this.element = this.createDOM();
@@ -86,43 +87,63 @@ export class LandingPageSimple {
       precision: 'mediump'
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, this.isMobile ? 0.85 : 1));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-    console.log('LandingPageSimple: Three.js initialized, creating starfield...');
-    
-    // Minimal starfield
-    this.createMinimalStarfield();
+    console.log('LandingPageSimple: Three.js initialized, creating live background...');
+
+    // Lightweight live cosmic background
+    this.createLiveBackground();
   }
 
-  createMinimalStarfield() {
-    const geometry = new THREE.BufferGeometry();
-    const count = this.isMobile ? 150 : 300;
-    
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-    
-    for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 2000;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 2000;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 2000;
-      
-      const brightness = Math.random();
-      colors[i * 3] = brightness;
-      colors[i * 3 + 1] = brightness;
-      colors[i * 3 + 2] = brightness;
+  createLiveBackground() {
+    const textureSize = this.isMobile ? 512 : 768;
+    const bgCanvas = document.createElement('canvas');
+    bgCanvas.width = textureSize;
+    bgCanvas.height = textureSize;
+    const bgCtx = bgCanvas.getContext('2d');
+
+    const gradient = bgCtx.createRadialGradient(
+      textureSize * 0.5,
+      textureSize * 0.45,
+      textureSize * 0.08,
+      textureSize * 0.5,
+      textureSize * 0.5,
+      textureSize * 0.7
+    );
+    gradient.addColorStop(0, '#1f1a44');
+    gradient.addColorStop(0.5, '#0d1125');
+    gradient.addColorStop(1, '#010205');
+    bgCtx.fillStyle = gradient;
+    bgCtx.fillRect(0, 0, textureSize, textureSize);
+
+    const starCount = this.isMobile ? 80 : 140;
+    for (let i = 0; i < starCount; i++) {
+      const x = Math.random() * textureSize;
+      const y = Math.random() * textureSize;
+      const r = Math.random() * 1.2 + 0.2;
+      const alpha = Math.random() * 0.7 + 0.2;
+      bgCtx.fillStyle = `rgba(${170 + Math.floor(Math.random() * 80)}, ${190 + Math.floor(Math.random() * 60)}, 255, ${alpha})`;
+      bgCtx.beginPath();
+      bgCtx.arc(x, y, r, 0, Math.PI * 2);
+      bgCtx.fill();
     }
-    
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-    
-    const material = new THREE.PointsMaterial({
-      size: 2,
-      vertexColors: true,
-      sizeAttenuation: true
+
+    this.liveBgTexture = new THREE.CanvasTexture(bgCanvas);
+    this.liveBgTexture.wrapS = THREE.RepeatWrapping;
+    this.liveBgTexture.wrapT = THREE.RepeatWrapping;
+    this.liveBgTexture.repeat.set(1.15, 1.15);
+    this.liveBgTexture.colorSpace = THREE.SRGBColorSpace;
+
+    const bgGeometry = new THREE.SphereGeometry(1600, this.isMobile ? 12 : 18, this.isMobile ? 10 : 14);
+    const bgMaterial = new THREE.MeshBasicMaterial({
+      map: this.liveBgTexture,
+      side: THREE.BackSide,
+      transparent: true,
+      opacity: 0.95
     });
-    
-    const stars = new THREE.Points(geometry, material);
-    this.scene.add(stars);
+
+    this.liveBgMesh = new THREE.Mesh(bgGeometry, bgMaterial);
+    this.scene.add(this.liveBgMesh);
   }
 
   setupEventListeners() {
@@ -138,14 +159,23 @@ export class LandingPageSimple {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  animate() {
-    this.animationFrameId = requestAnimationFrame(() => this.animate());
-    
+  animate(now = performance.now()) {
+    this.animationFrameId = requestAnimationFrame((time) => this.animate(time));
+
+    const minFrameGap = this.isMobile ? 50 : 33;
+    if (now - this.lastRenderAt < minFrameGap) return;
+    this.lastRenderAt = now;
+
     // Gentle camera movement
-    const time = Date.now() * 0.0001;
+    const time = now * 0.0001;
     this.camera.position.x = Math.sin(time) * 30;
     this.camera.position.y = Math.cos(time * 0.8) * 20;
     this.camera.lookAt(0, 0, 0);
+
+    if (this.liveBgTexture) {
+      this.liveBgTexture.offset.x += 0.0001;
+      this.liveBgTexture.offset.y += 0.00005;
+    }
     
     this.renderer.render(this.scene, this.camera);
   }
@@ -161,12 +191,21 @@ export class LandingPageSimple {
       if (child.geometry) child.geometry.dispose();
       if (child.material) {
         if (Array.isArray(child.material)) {
-          child.material.forEach(m => m.dispose());
+          child.material.forEach(m => {
+            if (m.map) m.map.dispose();
+            m.dispose();
+          });
         } else {
+          if (child.material.map) child.material.map.dispose();
           child.material.dispose();
         }
       }
     });
+
+    if (this.liveBgTexture) {
+      this.liveBgTexture.dispose();
+      this.liveBgTexture = null;
+    }
     
     this.renderer.dispose();
   }
