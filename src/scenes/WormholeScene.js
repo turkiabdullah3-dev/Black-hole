@@ -35,7 +35,7 @@ export class WormholeScene {
     this.frameCounter = 0;
     this.lastFrameTime = performance.now();
     this.lastHudUpdateTime = 0;
-    this.hudUpdateIntervalMs = this.isMobile ? 200 : 120; // تقليل تحديث HUD لتحسين الأداء
+    this.hudUpdateIntervalMs = this.isMobile ? 300 : 200; // تقليل تحديث HUD لتحسين الأداء
     this.handleResize = null;
     this.handleMouseMove = null;
     this.handleKeyDown = null;
@@ -217,7 +217,7 @@ export class WormholeScene {
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     
     // Starfield
-    const starfieldGeometry = createStarfield(this.isMobile ? 500 : 1500, 1000);
+    const starfieldGeometry = createStarfield(this.isMobile ? 200 : 400, 1000);
     const starfieldMaterial = new THREE.PointsMaterial({
       size: 2,
       vertexColors: true,
@@ -275,7 +275,7 @@ export class WormholeScene {
     const positions = [];
     const colors = [];
     
-    const galaxyParticleCount = this.isMobile ? 450 : 900;
+    const galaxyParticleCount = this.isMobile ? 200 : 350;
     for (let i = 0; i < galaxyParticleCount; i++) {
       const angle = Math.random() * Math.PI * 2;
       const radius = Math.random() * 100 + 20;
@@ -316,7 +316,7 @@ export class WormholeScene {
 
   createTunnel() {
     // Lightweight tunnel geometry + shader illusion
-    const tubeGeometry = new THREE.CylinderGeometry(60, 60, 900, this.isMobile ? 16 : 24, 1, true);
+    const tubeGeometry = new THREE.CylinderGeometry(60, 60, 900, this.isMobile ? 12 : 16, 1, true);
     
     const tunnelMaterial = new THREE.ShaderMaterial({
       uniforms: {
@@ -373,7 +373,7 @@ export class WormholeScene {
     const colors = [];
     const sizes = [];
     
-    const energyCount = this.isMobile ? 120 : 260;
+    const energyCount = this.isMobile ? 60 : 120;
     for (let i = 0; i < energyCount; i++) {
       const angle = Math.random() * Math.PI * 2;
       const radius = 45 + Math.random() * 30;
