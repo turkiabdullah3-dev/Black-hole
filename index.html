@@ -7,38 +7,6 @@
 </head>
 <body>
   <div id="root"></div>
-  <script type="module">
-    import { App } from './src/index.js';
-    
-    // Get the scene parameter if it exists
-    const params = new URLSearchParams(window.location.search);
-    const scene = params.get('scene');
-    
-    // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
-        handleScene(scene);
-      });
-    } else {
-      handleScene(scene);
-    }
-    
-    function handleScene(scene) {
-      if (scene === 'blackhole' || scene === 'wormhole') {
-        // Initialize app and load the scene
-        const app = new App();
-        window.app = app;
-        
-        if (scene === 'blackhole') {
-          app.renderBlackHole();
-        } else if (scene === 'wormhole') {
-          app.renderWormhole();
-        }
-      } else {
-        // Redirect to home
-        window.location.href = 'home.html';
-      }
-    }
-  </script>
+  <script type="module" src="./src/index.js"></script>
 </body>
 </html>

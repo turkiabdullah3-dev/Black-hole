@@ -14,8 +14,22 @@ export class App {
   }
 
   init() {
-    console.log('App: Rendering landing page...');
-    this.renderLanding();
+    // Check if there's a scene parameter in the URL
+    const params = new URLSearchParams(window.location.search);
+    const scene = params.get('scene');
+    
+    console.log('App: Detected scene parameter:', scene);
+    
+    if (scene === 'blackhole') {
+      console.log('App: Loading Black Hole scene...');
+      this.renderBlackHole();
+    } else if (scene === 'wormhole') {
+      console.log('App: Loading Wormhole scene...');
+      this.renderWormhole();
+    } else {
+      console.log('App: Rendering landing page...');
+      this.renderLanding();
+    }
   }
 
   renderLanding() {
