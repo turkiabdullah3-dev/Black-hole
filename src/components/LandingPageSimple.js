@@ -96,7 +96,7 @@ export class LandingPageSimple {
 
   createMinimalStarfield() {
     const geometry = new THREE.BufferGeometry();
-    const count = this.isMobile ? 200 : 500;
+    const count = this.isMobile ? 150 : 300;
     
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);

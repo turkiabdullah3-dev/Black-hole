@@ -26,7 +26,7 @@ export class WormholeEmbeddingDiagram {
     if (curve.length < 2) return;
 
     // Create funnel geometry by rotating the curve
-    const segments = 48;
+    const segments = 32;
     const vertices = [];
     const indices = [];
     const colors = [];
