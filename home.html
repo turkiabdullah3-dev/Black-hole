@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacetime Explorer - استكشف الكون</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/home.css">
+</head>
+<body>
+    <div class="home-container">
+        <!-- Navigation -->
+        <nav class="home-nav">
+            <div class="nav-brand">🌌 Spacetime Explorer</div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">الرئيسية</a>
+                <a href="src/pages/astronomy.html" class="nav-link">الفلك</a>
+                <a href="src/pages/physics-education.html" class="nav-link">التعليم</a>
+                <a href="src/pages/advanced-viz.html" class="nav-link">محاكاات</a>
+                <a href="src/pages/interactive-tools.html" class="nav-link">الأدوات</a>
+                <a href="src/pages/immersive.html" class="nav-link">التجارب</a>
+                <a href="src/pages/data-integration.html" class="nav-link">البيانات</a>
+                <a href="src/pages/social-community.html" class="nav-link">المجتمع</a>
+                <a href="src/pages/settings.html" class="nav-link">الإعدادات</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>استكشف هندسة الزمكان</h1>
+                <p>تجربة تفاعلية شاملة لاستكشاف الفضاء والفيزياء</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" onclick="startExperience()">ابدأ الاستكشاف</button>
+                    <button class="btn-secondary btn-large">اقرأ المزيد</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2>المميزات الرئيسية</h2>
+            <div class="features-grid">
+                <!-- Feature 1: Astronomy -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🔭</div>
+                    <h3>استكشاف فلكي</h3>
+                    <p>اكتشف الكواكب الخارجية والمجرات والسديم</p>
+                    <a href="src/pages/astronomy.html" class="feature-link">→ اذهب للفلك</a>
+                </div>
+
+                <!-- Feature 2: Physics Education -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">⚛️</div>
+                    <h3>تعليم الفيزياء</h3>
+                    <p>تعلم قوانين الفيزياء بطريقة تفاعلية ومرئية</p>
+                    <a href="src/pages/physics-education.html" class="feature-link">→ تعلم الآن</a>
+                </div>
+
+                <!-- Feature 3: Advanced Visualizations -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🎯</div>
+                    <h3>محاكاات متقدمة</h3>
+                    <p>رؤية موجات الجاذبية والثقوب السوداء بدقة</p>
+                    <a href="src/pages/advanced-viz.html" class="feature-link">→ شاهد المحاكاات</a>
+                </div>
+
+                <!-- Feature 4: Interactive Tools -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🔧</div>
+                    <h3>أدوات تفاعلية</h3>
+                    <p>حاسبات وأدوات لاستكشاف الظواهر الفيزيائية</p>
+                    <a href="src/pages/interactive-tools.html" class="feature-link">→ استخدم الأدوات</a>
+                </div>
+
+                <!-- Feature 5: Immersive Experience -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🥽</div>
+                    <h3>تجارب غامرة</h3>
+                    <p>الواقع الافتراضي والصور البانورامية والصوت ثلاثي الأبعاد</p>
+                    <a href="src/pages/immersive.html" class="feature-link">→ ادخل الواقع الافتراضي</a>
+                </div>
+
+                <!-- Feature 6: Data Integration -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🌐</div>
+                    <h3>بيانات حقيقية</h3>
+                    <p>بيانات مباشرة من ناسا والوكالات الفضائية</p>
+                    <a href="src/pages/data-integration.html" class="feature-link">→ عرض البيانات</a>
+                </div>
+
+                <!-- Feature 7: Social & Community -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">👥</div>
+                    <h3>مجتمع عالمي</h3>
+                    <p>شارك اكتشافاتك وتنافس مع المستكشفين الآخرين</p>
+                    <a href="src/pages/social-community.html" class="feature-link">→ انضم للمجتمع</a>
+                </div>
+
+                <!-- Feature 8: Customization -->
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>إعدادات متقدمة</h3>
+                    <p>خصص التطبيق حسب احتياجاتك وتفضيلاتك</p>
+                    <a href="src/pages/settings.html" class="feature-link">→ فتح الإعدادات</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Showcase -->
+        <section class="experiences">
+            <h2>التجارب المتاحة</h2>
+            <div class="experiences-container">
+                <!-- Black Hole Experience -->
+                <div class="experience-item glass-effect">
+                    <div class="experience-preview">
+                        <canvas id="experience-blackhole"></canvas>
+                    </div>
+                    <div class="experience-info">
+                        <h3>🌑 رحلة الثقب الأسود</h3>
+                        <p>استكشف أعظم ألغاز الكون مع تصور دقيق لانحناء الزمكان</p>
+                        <button class="btn-explore">استكشف</button>
+                    </div>
+                </div>
+
+                <!-- Wormhole Experience -->
+                <div class="experience-item glass-effect">
+                    <div class="experience-preview">
+                        <canvas id="experience-wormhole"></canvas>
+                    </div>
+                    <div class="experience-info">
+                        <h3>🌀 عبور الثقب الدودي</h3>
+                        <p>رحلة مخيلة عبر ممر دودي يربط بين جزأي الكون</p>
+                        <button class="btn-explore">استكشف</button>
+                    </div>
+                </div>
+
+                <!-- Galaxy Explorer -->
+                <div class="experience-item glass-effect">
+                    <div class="experience-preview">
+                        <canvas id="experience-galaxy"></canvas>
+                    </div>
+                    <div class="experience-info">
+                        <h3>🌌 استكشاف المجرات</h3>
+                        <p>اكتشف هيكل المجرات وحركة ملايين النجوم</p>
+                        <button class="btn-explore">استكشف</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="statistics glass-effect">
+            <h2>بالأرقام</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <p class="number">50+</p>
+                    <p class="label">تجربة تفاعلية</p>
+                </div>
+                <div class="stat">
+                    <p class="number">1000+</p>
+                    <p class="label">معادلة فيزيائية</p>
+                </div>
+                <div class="stat">
+                    <p class="number">2000+</p>
+                    <p class="label">ساعات من المحتوى</p>
+                </div>
+                <div class="stat">
+                    <p class="number">10000+</p>
+                    <p class="label">مستخدم فعال</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2>آراء المستخدمين</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial glass-effect">
+                    <p class="quote">"تطبيق رائع يجعل الفيزياء الصعبة سهلة وممتعة!"</p>
+                    <p class="author">- أحمد، طالب جامعي</p>
+                </div>
+                <div class="testimonial glass-effect">
+                    <p class="quote">"أفضل طريقة لتعليم الفضاء والفيزياء للطلاب"</p>
+                    <p class="author">- فاطمة، معلمة فيزياء</p>
+                </div>
+                <div class="testimonial glass-effect">
+                    <p class="quote">"الرسومات والمحاكاات رائعة جداً!"</p>
+                    <p class="author">- محمد، عاشق الفضاء</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta glass-effect">
+            <h2>ابدأ رحلتك الآن</h2>
+            <p>اكتشف أسرار الكون بطريقة لم تكن تتخيلها من قبل</p>
+            <button class="btn-primary btn-large">ابدأ مجاناً</button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="home-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="src/pages/astronomy.html">الفلك</a></li>
+                        <li><a href="src/pages/physics-education.html">التعليم</a></li>
+                        <li><a href="src/pages/advanced-viz.html">المحاكاات</a></li>
+                        <li><a href="src/pages/interactive-tools.html">الأدوات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>المصادر</h4>
+                    <ul>
+                        <li><a href="#">التوثيق</a></li>
+                        <li><a href="#">الدروس</a></li>
+                        <li><a href="#">المقالات</a></li>
+                        <li><a href="#">المرجع</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>المجتمع</h4>
+                    <ul>
+                        <li><a href="src/pages/social-community.html">المجتمع</a></li>
+                        <li><a href="#">المنتدى</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Reddit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>معلومات</h4>
+                    <ul>
+                        <li><a href="#">حول</a></li>
+                        <li><a href="#">الخصوصية</a></li>
+                        <li><a href="#">الشروط</a></li>
+                        <li><a href="#">التواصل</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Spacetime Explorer. جميع الحقوق محفوظة.</p>
+                <p>مصنوع بـ ❤️ من قبل فريق محترفين</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="src/utils/home.js"></script>
+</body>
+</html>

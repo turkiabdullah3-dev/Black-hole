@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسابات الفيزياء المتقدمة - فاكس سبيستايم</title>
+    <link rel="stylesheet" href="../styles/physics-calculations.css">
+</head>
+<body>
+    <div class="calc-container">
+        <!-- Navigation -->
+        <nav class="calc-nav">
+            <div class="nav-brand">🧮 حسابات الفيزياء</div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">الرئيسية</a>
+                <a href="#schwarzschild" class="nav-link">شفارتسشيلد</a>
+                <a href="#escape" class="nav-link">سرعة الهروب</a>
+                <a href="#dilation" class="nav-link">تمدد الزمن</a>
+                <a href="#tidal" class="nav-link">المد والجزر</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="calc-hero">
+            <h1>🌌 حسابات الفيزياء الحقيقية</h1>
+            <p>احسب الظواهر الكونية باستخدام معادلات النسبية والفيزياء الكلاسيكية</p>
+        </section>
+
+        <!-- 1. Schwarzschild Radius Calculator -->
+        <section id="schwarzschild" class="calc-section glass-effect">
+            <div class="calc-header">
+                <h2>🕳️ حاسبة نصف قطر شفارتسشيلد</h2>
+                <p>احسب حجم الثقب الأسود المحتمل من كتلة معينة</p>
+            </div>
+
+            <form id="schwarzschild-form" class="calc-form">
+                <div class="form-group">
+                    <label for="schwarzschild-mass">الكتلة:</label>
+                    <input type="number" id="schwarzschild-mass" name="mass" value="10" min="0.1" step="0.1" required>
+                    
+                    <label for="schwarzschild-type">نوع الكتلة:</label>
+                    <select id="schwarzschild-type" name="type">
+                        <option value="solar">كتل شمسية (M☉)</option>
+                        <option value="earth">كتل أرضية (M⊕)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-calculate">احسب</button>
+            </form>
+
+            <div id="schwarzschild-result" class="result-container"></div>
+
+            <div class="formula">
+                <h3>الصيغة:</h3>
+                <p>r<sub>s</sub> = 2GM/c² = 3(M/M☉) كم</p>
+                <p class="explanation">حيث G ثابت الجاذبية و c سرعة الضوء</p>
+            </div>
+        </section>
+
+        <!-- 2. Escape Velocity Calculator -->
+        <section id="escape" class="calc-section glass-effect">
+            <div class="calc-header">
+                <h2>🚀 حاسبة سرعة الهروب</h2>
+                <p>احسب سرعة الهروب من جسم سماوي</p>
+            </div>
+
+            <form id="escape-form" class="calc-form">
+                <div class="form-group">
+                    <label for="escape-mass">كتلة الجسم (كجم):</label>
+                    <input type="number" id="escape-mass" name="mass" value="5.972e24" min="0" step="1e24" required>
+
+                    <label for="escape-radius">نصف القطر (متر):</label>
+                    <input type="number" id="escape-radius" name="radius" value="6371000" min="0" step="100000" required>
+                </div>
+
+                <div class="preset-buttons">
+                    <button type="button" class="preset-btn" data-mass="1.989e30" data-radius="696340000">الشمس</button>
+                    <button type="button" class="preset-btn" data-mass="5.972e24" data-radius="6371000">الأرض</button>
+                    <button type="button" class="preset-btn" data-mass="7.342e22" data-radius="1737400">القمر</button>
+                </div>
+
+                <button type="submit" class="btn-calculate">احسب</button>
+            </form>
+
+            <div id="escape-result" class="result-container"></div>
+
+            <div class="formula">
+                <h3>الصيغة:</h3>
+                <p>v<sub>e</sub> = √(2GM/r)</p>
+            </div>
+        </section>
+
+        <!-- 3. Time Dilation Calculator -->
+        <section id="dilation" class="calc-section glass-effect">
+            <div class="calc-header">
+                <h2>⏰ حاسبة تمدد الزمن النسبوي</h2>
+                <p>احسب مقدار تمدد الزمن عند السفر بسرعات عالية</p>
+            </div>
+
+            <form id="time-dilation-form" class="calc-form">
+                <div class="form-group">
+                    <label for="time-dilation-velocity">السرعة (م/ث):</label>
+                    <input type="number" id="time-dilation-velocity" name="velocity" value="0.1c" step="1000000" required>
+
+                    <label for="time-dilation-time">الزمن الأرضي (سنة):</label>
+                    <input type="number" id="time-dilation-time" name="time" value="10" min="0.1" step="0.1" required>
+                </div>
+
+                <div class="preset-buttons">
+                    <button type="button" class="preset-velocity" data-velocity="29979245">10% c</button>
+                    <button type="button" class="preset-velocity" data-velocity="59958490">20% c</button>
+                    <button type="button" class="preset-velocity" data-velocity="150000000">50% c</button>
+                </div>
+
+                <button type="submit" class="btn-calculate">احسب</button>
+            </form>
+
+            <div id="time-dilation-result" class="result-container"></div>
+
+            <div class="formula">
+                <h3>الصيغة:</h3>
+                <p>γ = 1/√(1 - v²/c²)</p>
+                <p class="explanation">معامل لورنتز الذي يحدد مقدار تمدد الزمن</p>
+            </div>
+        </section>
+
+        <!-- 4. Redshift Calculator -->
+        <section id="redshift" class="calc-section glass-effect">
+            <div class="calc-header">
+                <h2>🔴 حاسبة الانزياح الأحمر</h2>
+                <p>احسب تأثير دوبلر على الضوء من الأجسام المتحركة</p>
+            </div>
+
+            <form id="redshift-form" class="calc-form">
+                <div class="form-group">
+                    <label for="redshift-velocity">سرعة الابتعاد (م/ث):</label>
+                    <input type="number" id="redshift-velocity" name="velocity" value="10000000" step="1000000" required>
+
+                    <label for="redshift-wavelength">الطول الموجي الأصلي (نانومتر):</label>
+                    <input type="number" id="redshift-wavelength" name="wavelength" value="500" min="1" step="1" required>
+                </div>
+
+                <button type="submit" class="btn-calculate">احسب</button>
+            </form>
+
+            <div id="redshift-result" class="result-container"></div>
+
+            <div class="formula">
+                <h3>الصيغة:</h3>
+                <p>z = √((1+β)/(1-β)) - 1</p>
+                <p>حيث β = v/c</p>
+            </div>
+        </section>
+
+        <!-- 5. Tidal Force Calculator -->
+        <section id="tidal" class="calc-section glass-effect">
+            <div class="calc-header">
+                <h2>🌊 حاسبة قوة المد والجزر</h2>
+                <p>احسب القوة التي تمزق الأجسام بسبب فروق الجاذبية</p>
+            </div>
+
+            <form id="tidal-form" class="calc-form">
+                <div class="form-group">
+                    <label for="tidal-primary-mass">كتلة الجسم الأساسي (كتل شمسية):</label>
+                    <input type="number" id="tidal-primary-mass" name="primary-mass" value="10" min="0.1" step="0.1" required>
+
+                    <label for="tidal-secondary-mass">كتلة الجسم الثانوي (كتل أرضية):</label>
+                    <input type="number" id="tidal-secondary-mass" name="secondary-mass" value="1" min="0.1" step="0.1" required>
+
+                    <label for="tidal-distance">المسافة (وحدات فلكية AU):</label>
+                    <input type="number" id="tidal-distance" name="distance" value="0.05" min="0.01" step="0.01" required>
+
+                    <label for="tidal-secondary-radius">نصف قطر الجسم الثانوي (كتل أرضية):</label>
+                    <input type="number" id="tidal-secondary-radius" name="secondary-radius" value="1" min="0.1" step="0.1" required>
+                </div>
+
+                <button type="submit" class="btn-calculate">احسب</button>
+            </form>
+
+            <div id="tidal-result" class="result-container"></div>
+
+            <div class="formula">
+                <h3>الصيغة:</h3>
+                <p>F = 2GMm·d/r³</p>
+                <p class="explanation">حيث M كتلة النجم، m كتلة الجسم، d نصف قطر الجسم، r المسافة</p>
+            </div>
+        </section>
+
+        <!-- 6. ISCO Calculator -->
+        <section id="isco" class="calc-section glass-effect">
+            <div class="calc-header">
+                <h2>🌀 حاسبة ISCO</h2>
+                <p>احسب أقرب مدار مستقر حول ثقب أسود</p>
+            </div>
+
+            <form id="isco-form" class="calc-form">
+                <div class="form-group">
+                    <label for="isco-mass">كتلة الثقب الأسود (كتل شمسية):</label>
+                    <input type="number" id="isco-mass" name="mass" value="10" min="0.1" step="0.1" required>
+                </div>
+
+                <button type="submit" class="btn-calculate">احسب</button>
+            </form>
+
+            <div id="isco-result" class="result-container"></div>
+
+            <div class="formula">
+                <h3>الصيغة:</h3>
+                <p>r<sub>isco</sub> = 6r<sub>s</sub> = 12GM/c²</p>
+                <p class="explanation">أقرب مدار يمكن لجسم أن يدور حوله بشكل مستقر</p>
+            </div>
+        </section>
+
+        <!-- Results Summary -->
+        <section class="summary-section glass-effect">
+            <h2>📊 ملخص الحسابات</h2>
+            <div class="summary-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الحساب</th>
+                            <th>النتيجة الأخيرة</th>
+                            <th>الوحدة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>نصف قطر شفارتسشيلد</td>
+                            <td id="summary-schwarzschild">-</td>
+                            <td>كم</td>
+                        </tr>
+                        <tr>
+                            <td>سرعة الهروب</td>
+                            <td id="summary-escape">-</td>
+                            <td>كم/ث</td>
+                        </tr>
+                        <tr>
+                            <td>معامل تمدد الزمن</td>
+                            <td id="summary-dilation">-</td>
+                            <td>γ</td>
+                        </tr>
+                        <tr>
+                            <td>الانزياح الأحمر</td>
+                            <td id="summary-redshift">-</td>
+                            <td>z</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="calc-footer">
+            <p>حسابات الفيزياء الحقيقية المستندة إلى النسبية العامة والخاصة</p>
+            <p>الثوابت المستخدمة من CODATA 2018</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { initializeCalculators } from '../utils/interactiveTools.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCalculators();
+
+            // إضافة معالجات الأزرار المسبقة
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.getElementById('escape-mass').value = btn.dataset.mass;
+                    document.getElementById('escape-radius').value = btn.dataset.radius;
+                });
+            });
+
+            document.querySelectorAll('.preset-velocity').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.getElementById('time-dilation-velocity').value = btn.dataset.velocity;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Hub - استكشاف الكون</title>
+    <link rel="stylesheet" href="../styles/astronomy.css">
+</head>
+<body>
+    <div class="astronomy-container">
+        <!-- Navigation -->
+        <nav class="astronomy-nav">
+            <div class="nav-brand">🔭 Astronomy Hub</div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">الرئيسية</a>
+                <a href="#exoplanets" class="nav-link active">الكواكب الخارجية</a>
+                <a href="#galaxies" class="nav-link">المجرات</a>
+                <a href="#stars" class="nav-link">النجوم</a>
+                <a href="#nebulae" class="nav-link">السديم</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="astronomy-hero">
+            <div class="hero-content">
+                <h1>استكشف العالم الكوني</h1>
+                <p>رحلة تفاعلية عبر أعظم أسرار الكون</p>
+            </div>
+            <div class="hero-bg"></div>
+        </section>
+
+        <!-- Exoplanet Explorer -->
+        <section id="exoplanets" class="section">
+            <div class="section-header">
+                <h2>🌍 استكشاف الكواكب الخارجية</h2>
+                <p>اكتشف آلاف الكواكب خارج نظامنا الشمسي</p>
+            </div>
+            
+            <div class="exoplanet-grid">
+                <div class="exoplanet-card glass-effect">
+                    <div class="exoplanet-image">
+                        <canvas id="exoplanet1"></canvas>
+                    </div>
+                    <div class="exoplanet-info">
+                        <h3>Proxima Centauri b</h3>
+                        <p class="distance">المسافة: 4.24 سنة ضوئية</p>
+                        <div class="specs">
+                            <span>🌡️ حرارة: ~234K</span>
+                            <span>⚖️ كتلة: 1.27 كتلة أرضية</span>
+                            <span>📍 النوع: أرضي</span>
+                        </div>
+                        <button class="btn-explore">استكشف التفاصيل</button>
+                    </div>
+                </div>
+
+                <div class="exoplanet-card glass-effect">
+                    <div class="exoplanet-image">
+                        <canvas id="exoplanet2"></canvas>
+                    </div>
+                    <div class="exoplanet-info">
+                        <h3>TRAPPIST-1e</h3>
+                        <p class="distance">المسافة: 12.09 سنة ضوئية</p>
+                        <div class="specs">
+                            <span>🌡️ حرارة: ~246K</span>
+                            <span>⚖️ كتلة: 0.62 كتلة أرضية</span>
+                            <span>📍 النوع: أرضي</span>
+                        </div>
+                        <button class="btn-explore">استكشف التفاصيل</button>
+                    </div>
+                </div>
+
+                <div class="exoplanet-card glass-effect">
+                    <div class="exoplanet-image">
+                        <canvas id="exoplanet3"></canvas>
+                    </div>
+                    <div class="exoplanet-info">
+                        <h3>Kepler-452b</h3>
+                        <p class="distance">المسافة: 1200 سنة ضوئية</p>
+                        <div class="specs">
+                            <span>🌡️ حرارة: ~265K</span>
+                            <span>⚖️ كتلة: 5.0 كتل أرضية</span>
+                            <span>📍 النوع: عملاق صخري</span>
+                        </div>
+                        <button class="btn-explore">استكشف التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galaxy Catalog -->
+        <section id="galaxies" class="section">
+            <div class="section-header">
+                <h2>🌌 معرض المجرات</h2>
+                <p>تصفح أجمل المجرات في الكون المعروف</p>
+            </div>
+
+            <div class="galaxy-catalog">
+                <div class="galaxy-card glass-effect">
+                    <div class="galaxy-visual">
+                        <canvas id="galaxy1"></canvas>
+                    </div>
+                    <div class="galaxy-details">
+                        <h3>مجرة أندروميدا</h3>
+                        <p>النوع: حلزونية</p>
+                        <p>النجوم: ~1 تريليون نجم</p>
+                        <p>المسافة: 2.5 مليون سنة ضوئية</p>
+                        <p class="description">أقرب مجرة حلزونية كبيرة إلى درب التبانة</p>
+                    </div>
+                </div>
+
+                <div class="galaxy-card glass-effect">
+                    <div class="galaxy-visual">
+                        <canvas id="galaxy2"></canvas>
+                    </div>
+                    <div class="galaxy-details">
+                        <h3>مجرة العجلة</h3>
+                        <p>النوع: عدسية حلقية</p>
+                        <p>النجوم: ~100 مليار نجم</p>
+                        <p>المسافة: 500 مليون سنة ضوئية</p>
+                        <p class="description">نتيجة اصطدام مجرتين شكلت حلقة مذهلة</p>
+                    </div>
+                </div>
+
+                <div class="galaxy-card glass-effect">
+                    <div class="galaxy-visual">
+                        <canvas id="galaxy3"></canvas>
+                    </div>
+                    <div class="galaxy-details">
+                        <h3>مجرة الهيكل العظمي</h3>
+                        <p>النوع: حلزونية</p>
+                        <p>النجوم: ~300 مليار نجم</p>
+                        <p>المسافة: 28 مليون سنة ضوئية</p>
+                        <p class="description">تشتهر بنمط غير المعتاد ومحتواها من الغاز</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Star Evolution -->
+        <section id="stars" class="section">
+            <div class="section-header">
+                <h2>⭐ تطور النجوم</h2>
+                <p>شاهد رحلة النجم من الولادة إلى الموت</p>
+            </div>
+
+            <div class="star-evolution">
+                <div class="evolution-timeline">
+                    <div class="timeline-stage stage-1">
+                        <div class="stage-icon">🌫️</div>
+                        <h3>السديم الجزيئي</h3>
+                        <p>ينهار السديم تحت الجاذبية</p>
+                        <p class="duration">المدة: ملايين السنين</p>
+                    </div>
+
+                    <div class="timeline-arrow">→</div>
+
+                    <div class="timeline-stage stage-2">
+                        <div class="stage-icon">🔴</div>
+                        <h3>نجم أولي</h3>
+                        <p>يسخن القلب ويبدأ الاندماج</p>
+                        <p class="duration">المدة: ملايين السنين</p>
+                    </div>
+
+                    <div class="timeline-arrow">→</div>
+
+                    <div class="timeline-stage stage-3">
+                        <div class="stage-icon">☀️</div>
+                        <h3>النسلة الرئيسية</h3>
+                        <p>الحرق المستقر للهيدروجين</p>
+                        <p class="duration">المدة: مليارات السنين</p>
+                    </div>
+
+                    <div class="timeline-arrow">→</div>
+
+                    <div class="timeline-stage stage-4">
+                        <div class="stage-icon">🟠</div>
+                        <h3>عملاق أحمر</h3>
+                        <p>توسع بعد نفاد الهيدروجين</p>
+                        <p class="duration">المدة: مليارات السنين</p>
+                    </div>
+
+                    <div class="timeline-arrow">→</div>
+
+                    <div class="timeline-stage stage-5">
+                        <div class="stage-icon">⚪</div>
+                        <h3>قزم أبيض</h3>
+                        <p>بقايا النجم المحترق</p>
+                        <p class="duration">المدة: تريليونات السنين</p>
+                    </div>
+                </div>
+
+                <div class="hr-diagram">
+                    <h3>مخطط هرتسبرونج-راسل</h3>
+                    <canvas id="hrDiagram"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nebula Builder -->
+        <section id="nebulae" class="section">
+            <div class="section-header">
+                <h2>🎨 بناء السديم</h2>
+                <p>اصنع سديمك الخاص بألوان وأشكال مختلفة</p>
+            </div>
+
+            <div class="nebula-builder">
+                <div class="builder-controls glass-effect">
+                    <div class="control-group">
+                        <label for="nebula-color-1">اللون الأساسي</label>
+                        <input type="color" id="nebula-color-1" value="#ff00ff">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="nebula-color-2">اللون الثانوي</label>
+                        <input type="color" id="nebula-color-2" value="#00ffff">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="nebula-type">نوع السديم</label>
+                        <select id="nebula-type">
+                            <option value="emission">انبعاثي</option>
+                            <option value="reflection">انعكاسي</option>
+                            <option value="planetary">كوكبي</option>
+                            <option value="dark">ظلام</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="nebula-density">الكثافة</label>
+                        <input type="range" id="nebula-density" min="0" max="100" value="50">
+                        <span id="density-value">50%</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="nebula-size">الحجم</label>
+                        <input type="range" id="nebula-size" min="100" max="1000" value="500" step="50">
+                        <span id="size-value">500px</span>
+                    </div>
+
+                    <button class="btn-primary">إعادة تعيين</button>
+                    <button class="btn-success">حفظ السديم</button>
+                </div>
+
+                <div class="builder-preview glass-effect">
+                    <canvas id="nebula-preview"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- NASA Data -->
+        <section id="nasa-data" class="section data-section">
+            <!-- سيتم ملؤه بالبيانات الحقيقية من JavaScript -->
+        </section>
+
+        <!-- ESA Data -->
+        <section id="esa-data" class="section data-section">
+            <!-- سيتم ملؤه بالبيانات الحقيقية من JavaScript -->
+        </section>
+
+        <!-- Footer -->
+        <footer class="astronomy-footer">
+            <p>🌌 Astronomy Hub - استكشف الكون مع العلم</p>
+            <p>Data from NASA, ESA, and International Astronomical Union</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { initAstronomyPage, displayNASAData, displayESAData } from '../utils/dataDisplay.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initAstronomyPage();
+            displayNASAData();
+            displayESAData();
+        });
+    </script>
+</body>
+</html>

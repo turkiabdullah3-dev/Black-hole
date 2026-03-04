@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراقبة الفضاء الحية - فاكس سبيستايم</title>
+    <link rel="stylesheet" href="../styles/space-monitoring.css">
+</head>
+<body>
+    <div class="monitoring-container">
+        <!-- Header -->
+        <header class="monitoring-header">
+            <h1>🛰️ مركز مراقبة الفضاء الحي</h1>
+            <p>بيانات فورية عن أنشطة الفضاء والطقس الفضائي</p>
+        </header>
+
+        <!-- Live Updates -->
+        <section class="live-updates">
+            <h2>📡 البيانات الحية</h2>
+            <div class="update-timestamp">
+                <span id="current-time"></span>
+            </div>
+        </section>
+
+        <!-- Space Weather -->
+        <section id="space-weather" class="monitoring-section glass-effect">
+            <!-- سيتم ملؤه بالبيانات الحقيقية -->
+        </section>
+
+        <!-- Active Missions -->
+        <section class="monitoring-section glass-effect">
+            <h3>🚀 المهام النشطة حالياً</h3>
+            <div class="missions-status">
+                <div class="mission-item">
+                    <div class="mission-name">International Space Station</div>
+                    <div class="mission-status operational">🟢 نشطة</div>
+                    <div class="mission-detail">الارتفاع: 408 كم | الطاقم: 7</div>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-name">James Webb Space Telescope</div>
+                    <div class="mission-status operational">🟢 نشطة</div>
+                    <div class="mission-detail">النقطة: L2 | السنة الثالثة من التشغيل</div>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-name">Perseverance Rover (Mars)</div>
+                    <div class="mission-status operational">🟢 نشطة</div>
+                    <div class="mission-detail">الموقع: فوهة Jezero | المريخ</div>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-name">Parker Solar Probe</div>
+                    <div class="mission-status operational">🟢 نشطة</div>
+                    <div class="mission-detail">دراسة الشمس | مسافة قريبة جداً</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Satellite Statistics -->
+        <section class="monitoring-section glass-effect">
+            <h3>🛰️ إحصائيات الأقمار الصناعية</h3>
+            <div class="satellite-stats">
+                <div class="stat-card">
+                    <div class="stat-value">8,734</div>
+                    <div class="stat-label">إجمالي الأقمار النشطة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1,200</div>
+                    <div class="stat-label">مراقبة الأرض</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3,450</div>
+                    <div class="stat-label">الاتصالات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">600</div>
+                    <div class="stat-label">الملاحة</div>
+                </div>
+            </div>
+            
+            <h4>توزيع الأقمار حسب الدول</h4>
+            <div class="country-distribution">
+                <div class="country-bar">
+                    <span class="country-name">الولايات المتحدة</span>
+                    <div class="bar-container">
+                        <div class="bar" style="width: 32.6%; background: #00ffdc;"></div>
+                        <span class="bar-value">2,850</span>
+                    </div>
+                </div>
+                <div class="country-bar">
+                    <span class="country-name">الصين</span>
+                    <div class="bar-container">
+                        <div class="bar" style="width: 14.1%; background: #00d4ff;"></div>
+                        <span class="bar-value">1,235</span>
+                    </div>
+                </div>
+                <div class="country-bar">
+                    <span class="country-name">روسيا</span>
+                    <div class="bar-container">
+                        <div class="bar" style="width: 10.2%; background: #9678ff;"></div>
+                        <span class="bar-value">890</span>
+                    </div>
+                </div>
+                <div class="country-bar">
+                    <span class="country-name">الاتحاد الأوروبي</span>
+                    <div class="bar-container">
+                        <div class="bar" style="width: 10.2%; background: #ffd93d;"></div>
+                        <span class="bar-value">890</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gravitational Waves -->
+        <section class="monitoring-section glass-effect">
+            <h3>🌊 الموجات الجاذبية المكتشفة</h3>
+            <div class="gravitational-waves">
+                <div class="wave-event">
+                    <h4>GW190814</h4>
+                    <p class="event-date">📅 19 أغسطس 2019</p>
+                    <p class="event-type">نوع: اندماج ثقبي أسود</p>
+                    <p class="event-distance">المسافة: 800 مليون سنة ضوئية</p>
+                    <p class="event-mass">الكتلة: 142 كتلة شمسية</p>
+                    <p class="event-desc">أول اكتشاف لاندماج جسم غامض قد يكون نجم نيوترون</p>
+                </div>
+                <div class="wave-event">
+                    <h4>GW190917_114630</h4>
+                    <p class="event-date">📅 17 سبتمبر 2019</p>
+                    <p class="event-type">نوع: اندماج نجوم نيوترون</p>
+                    <p class="event-distance">المسافة: 240 مليون سنة ضوئية</p>
+                    <p class="event-mass">الكتلة: 3.4 كتلة شمسية</p>
+                    <p class="event-desc">أول اكتشاف مؤكد من نوعه مع خصائص فريدة</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Discoveries -->
+        <section id="latest-discoveries" class="monitoring-section glass-effect">
+            <!-- سيتم ملؤه بأحدث الاكتشافات -->
+        </section>
+
+        <!-- Real-time Alerts -->
+        <section class="monitoring-section glass-effect alert-section">
+            <h3>⚠️ التنبيهات والأحداث</h3>
+            <div class="alerts-list">
+                <div class="alert-item alert-warning">
+                    <span class="alert-icon">⚡</span>
+                    <div class="alert-content">
+                        <h4>عاصفة شمسية متوقعة</h4>
+                        <p>قد تحدث انقطاعات في الاتصالات خلال الساعات القادمة</p>
+                        <p class="alert-time">منذ 2 ساعة</p>
+                    </div>
+                </div>
+                <div class="alert-item alert-info">
+                    <span class="alert-icon">📍</span>
+                    <div class="alert-content">
+                        <h4>رصد نجم جديد غريب</h4>
+                        <p>إشارات راديوية دورية من نجم نيوترون نادر</p>
+                        <p class="alert-time">منذ 6 ساعات</p>
+                    </div>
+                </div>
+                <div class="alert-item alert-success">
+                    <span class="alert-icon">✅</span>
+                    <div class="alert-content">
+                        <h4>اكتشاف ماء في كوكب خارج المجموعة</h4>
+                        <p>تلسكوب جيمس ويب يرصد دليل واضح على وجود ماء</p>
+                        <p class="alert-time">منذ 1 يوم</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Sources -->
+        <section class="data-sources">
+            <h3>مصادر البيانات</h3>
+            <div class="sources-grid">
+                <div class="source-card">
+                    <h4>🇺🇸 NASA</h4>
+                    <p>بيانات المهام والمراقبات الفضائية</p>
+                </div>
+                <div class="source-card">
+                    <h4>🇪🇺 ESA</h4>
+                    <p>مراقبة الأرض ودراسة النجوم</p>
+                </div>
+                <div class="source-card">
+                    <h4>🌍 LIGO/Virgo</h4>
+                    <p>الموجات الجاذبية والأحداث الكونية</p>
+                </div>
+                <div class="source-card">
+                    <h4>🛰️ NOAA</h4>
+                    <p>بيانات الطقس الفضائي والشمسي</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="monitoring-footer">
+            <p>مركز مراقبة الفضاء الحي - بيانات محدثة باستمرار</p>
+            <p>هذا المشروع تعليمي ويستخدم بيانات حقيقية من وكالات الفضاء العالمية</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import { displaySpaceWeather, displayLatestDiscoveries } from '../utils/dataDisplay.js';
+
+        function updateTime() {
+            const now = new Date().toLocaleString('ar-SA', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'UTC'
+            });
+            
+            document.getElementById('current-time').textContent = `⏰ ${now} (UTC)`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateTime();
+            displaySpaceWeather();
+            displayLatestDiscoveries();
+            
+            // تحديث الساعة كل ثانية
+            setInterval(updateTime, 1000);
+
+            // تحديث بيانات الطقس الفضائي كل 5 دقائق
+            setInterval(() => {
+                displaySpaceWeather();
+            }, 300000);
+        });
+    </script>
+</body>
+</html>

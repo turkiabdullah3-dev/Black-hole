@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social & Community - المشاركة والمجتمع</title>
+    <link rel="stylesheet" href="../styles/social-community.css">
+</head>
+<body>
+    <div class="social-container">
+        <!-- Navigation -->
+        <nav class="social-nav">
+            <div class="nav-brand">👥 Social & Community</div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">الرئيسية</a>
+                <a href="#gallery" class="nav-link active">معرض المجتمع</a>
+                <a href="#leaderboard" class="nav-link">الترتيبات</a>
+                <a href="#share" class="nav-link">المشاركة</a>
+                <a href="#profile" class="nav-link">الملف الشخصي</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="social-hero">
+            <div class="hero-content">
+                <h1>مجتمع المستكشفين الفضائيين</h1>
+                <p>شارك اكتشافاتك وتعاون مع علماء ومستكشفين حول العالم</p>
+            </div>
+        </section>
+
+        <!-- Community Gallery -->
+        <section id="gallery" class="section">
+            <div class="section-header">
+                <h2>🖼️ معرض المجتمع</h2>
+                <p>اعرض وشاهد إنشاءات المجتمع</p>
+            </div>
+
+            <div class="gallery-filters glass-effect">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="simulations">محاكاات</button>
+                <button class="filter-btn" data-filter="visualizations">تصورات</button>
+                <button class="filter-btn" data-filter="discoveries">اكتشافات</button>
+                <button class="filter-btn" data-filter="art">فن</button>
+                <input type="search" class="search-box" placeholder="بحث...">
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item glass-effect" data-category="simulations">
+                    <div class="item-image">
+                        <canvas id="gallery-item-1"></canvas>
+                        <div class="item-overlay">
+                            <p class="views">👁️ 1,234</p>
+                            <p class="likes">❤️ 456</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3>نظام ثقوب سوداء متعددة</h3>
+                        <p class="author">بقلم: أحمد الفضائي</p>
+                        <p class="description">محاكاة لنظام ثقب أسود ثنائي مع مدارات معقدة</p>
+                        <div class="item-tags">
+                            <span class="tag">محاكاة</span>
+                            <span class="tag">فيزياء</span>
+                            <span class="tag">Three.js</span>
+                        </div>
+                        <button class="btn-view">عرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item glass-effect" data-category="visualizations">
+                    <div class="item-image">
+                        <canvas id="gallery-item-2"></canvas>
+                        <div class="item-overlay">
+                            <p class="views">👁️ 2,890</p>
+                            <p class="likes">❤️ 892</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3>هندسة شوارتسشيلد التفاعلية</h3>
+                        <p class="author">بقلم: فاطمة الكونية</p>
+                        <p class="description">تصور تفاعلي لانحناء الزمكان حول الثقب الأسود</p>
+                        <div class="item-tags">
+                            <span class="tag">تصور</span>
+                            <span class="tag">نسبية</span>
+                            <span class="tag">رياضيات</span>
+                        </div>
+                        <button class="btn-view">عرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item glass-effect" data-category="discoveries">
+                    <div class="item-image">
+                        <canvas id="gallery-item-3"></canvas>
+                        <div class="item-overlay">
+                            <p class="views">👁️ 3,456</p>
+                            <p class="likes">❤️ 1,234</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3>اكتشاف موجة جاذبية</h3>
+                        <p class="author">بقلم: محمد الموجات</p>
+                        <p class="description">تتبع مرئي لموجة جاذبية من اصطدام نجمين نيوترونيين</p>
+                        <div class="item-tags">
+                            <span class="tag">اكتشاف</span>
+                            <span class="tag">موجات</span>
+                            <span class="tag">فلك</span>
+                        </div>
+                        <button class="btn-view">عرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item glass-effect" data-category="art">
+                    <div class="item-image">
+                        <canvas id="gallery-item-4"></canvas>
+                        <div class="item-overlay">
+                            <p class="views">👁️ 5,678</p>
+                            <p class="likes">❤️ 2,345</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3>فني الأكوان المتعددة</h3>
+                        <p class="author">بقلم: سارة الخيال</p>
+                        <p class="description">فن رقمي مستوحى من نظرية الأكوان المتوازية</p>
+                        <div class="item-tags">
+                            <span class="tag">فن</span>
+                            <span class="tag">خيال</span>
+                            <span class="tag">جمالي</span>
+                        </div>
+                        <button class="btn-view">عرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item glass-effect" data-category="simulations">
+                    <div class="item-image">
+                        <canvas id="gallery-item-5"></canvas>
+                        <div class="item-overlay">
+                            <p class="views">👁️ 890</p>
+                            <p class="likes">❤️ 234</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3>محاكاة تطور النجم</h3>
+                        <p class="author">بقلم: علي النجوم</p>
+                        <p class="description">رحلة نجم من الولادة إلى الموت عبر مليارات السنين</p>
+                        <div class="item-tags">
+                            <span class="tag">محاكاة</span>
+                            <span class="tag">فلك</span>
+                            <span class="tag">تعليمي</span>
+                        </div>
+                        <button class="btn-view">عرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item glass-effect" data-category="visualizations">
+                    <div class="item-image">
+                        <canvas id="gallery-item-6"></canvas>
+                        <div class="item-overlay">
+                            <p class="views">👁️ 4,567</p>
+                            <p class="likes">❤️ 1,890</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <h3>خريطة الكون المرئي</h3>
+                        <p class="author">بقلم: ليلى الفضاء</p>
+                        <p class="description">تصور تفاعلي للمجرات والعناقيد في الكون</p>
+                        <div class="item-tags">
+                            <span class="tag">تصور</span>
+                            <span class="tag">بيانات</span>
+                            <span class="tag">خرائط</span>
+                        </div>
+                        <button class="btn-view">عرض التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-load-more">تحميل المزيد</button>
+        </section>
+
+        <!-- Leaderboard -->
+        <section id="leaderboard" class="section">
+            <div class="section-header">
+                <h2>🏆 لوحات الترتيبات</h2>
+                <p>أفضل المستكشفين والمساهمين</p>
+            </div>
+
+            <div class="leaderboard-tabs glass-effect">
+                <button class="tab-btn active" data-tab="explorers">المستكشفون</button>
+                <button class="tab-btn" data-tab="creators">منشئو المحتوى</button>
+                <button class="tab-btn" data-tab="educators">المعلمون</button>
+                <button class="tab-btn" data-tab="developers">المطورون</button>
+            </div>
+
+            <div class="leaderboard-list glass-effect">
+                <div class="leaderboard-item">
+                    <div class="rank">1</div>
+                    <div class="user-info">
+                        <div class="avatar">👨‍🚀</div>
+                        <div class="details">
+                            <h4>أحمد النجار</h4>
+                            <p>مستكشف متقدم</p>
+                        </div>
+                    </div>
+                    <div class="points">
+                        <p class="score">45,678 نقطة</p>
+                        <p class="badge">🥇 الأول</p>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item">
+                    <div class="rank">2</div>
+                    <div class="user-info">
+                        <div class="avatar">👩‍🔬</div>
+                        <div class="details">
+                            <h4>فاطمة الفلكية</h4>
+                            <p>باحثة فيزياء</p>
+                        </div>
+                    </div>
+                    <div class="points">
+                        <p class="score">42,345 نقطة</p>
+                        <p class="badge">🥈 الثاني</p>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item">
+                    <div class="rank">3</div>
+                    <div class="user-info">
+                        <div class="avatar">👨‍💻</div>
+                        <div class="details">
+                            <h4>محمد المبرمج</h4>
+                            <p>مطور فضائي</p>
+                        </div>
+                    </div>
+                    <div class="points">
+                        <p class="score">39,876 نقطة</p>
+                        <p class="badge">🥉 الثالث</p>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item">
+                    <div class="rank">4</div>
+                    <div class="user-info">
+                        <div class="avatar">👩‍🎓</div>
+                        <div class="details">
+                            <h4>ليلى المعلمة</h4>
+                            <p>معلمة فيزياء</p>
+                        </div>
+                    </div>
+                    <div class="points">
+                        <p class="score">38,234 نقطة</p>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item">
+                    <div class="rank">5</div>
+                    <div class="user-info">
+                        <div class="avatar">👨‍🎨</div>
+                        <div class="details">
+                            <h4>علي الفنان</h4>
+                            <p>فنان رقمي</p>
+                        </div>
+                    </div>
+                    <div class="points">
+                        <p class="score">35,678 نقطة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Share & Save -->
+        <section id="share" class="section">
+            <div class="section-header">
+                <h2>📤 المشاركة والحفظ</h2>
+                <p>شارك إنشاءاتك على وسائل التواصل</p>
+            </div>
+
+            <div class="share-section glass-effect">
+                <div class="share-preview">
+                    <h3>معاينة المشاركة</h3>
+                    <div class="preview-card">
+                        <canvas id="share-preview-canvas"></canvas>
+                        <h4>محاكاة الثقب الأسود الخاصة بي</h4>
+                        <p>لقد استكشفت هذا الثقب الأسود بمساعدة تطبيق Spacetime Explorer!</p>
+                    </div>
+                </div>
+
+                <div class="share-options">
+                    <h3>شارك عبر</h3>
+                    <div class="social-buttons">
+                        <button class="social-btn facebook">
+                            <span>📘</span> فيسبوك
+                        </button>
+                        <button class="social-btn twitter">
+                            <span>𝕏</span> تويتر
+                        </button>
+                        <button class="social-btn instagram">
+                            <span>📷</span> انستقرام
+                        </button>
+                        <button class="social-btn linkedin">
+                            <span>💼</span> لينكدإن
+                        </button>
+                        <button class="social-btn whatsapp">
+                            <span>💬</span> واتس أب
+                        </button>
+                        <button class="social-btn copy-link">
+                            <span>🔗</span> نسخ الرابط
+                        </button>
+                    </div>
+                </div>
+
+                <div class="save-options">
+                    <h3>حفظ وتنزيل</h3>
+                    <button class="save-btn">💾 حفظ المحاكاة</button>
+                    <button class="save-btn">📥 تنزيل الصورة</button>
+                    <button class="save-btn">🎬 تنزيل الفيديو</button>
+                    <button class="save-btn">📊 تصدير البيانات</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Profile -->
+        <section id="profile" class="section">
+            <div class="section-header">
+                <h2>👤 الملف الشخصي</h2>
+                <p>إدارة حسابك وإحصائياتك</p>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile-header glass-effect">
+                    <div class="profile-avatar">
+                        <img src="placeholder.jpg" alt="Profile Avatar">
+                        <button class="edit-avatar">تغيير الصورة</button>
+                    </div>
+
+                    <div class="profile-info">
+                        <h2>اسم المستخدم</h2>
+                        <p class="level">مستوى: متقدم 🎖️</p>
+                        <p class="bio">عاشق الفضاء والفيزياء | مستكشف متحمس</p>
+                        <button class="edit-profile">تحرير الملف الشخصي</button>
+                    </div>
+                </div>
+
+                <div class="profile-stats glass-effect">
+                    <h3>الإحصائيات</h3>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <p class="label">النقاط الإجمالية</p>
+                            <p class="value">45,678</p>
+                        </div>
+                        <div class="stat">
+                            <p class="label">الترتيب العام</p>
+                            <p class="value">#1</p>
+                        </div>
+                        <div class="stat">
+                            <p class="label">المحاكاات المحفوظة</p>
+                            <p class="value">28</p>
+                        </div>
+                        <div class="stat">
+                            <p class="label">الاكتشافات</p>
+                            <p class="value">15</p>
+                        </div>
+                        <div class="stat">
+                            <p class="label">الأيام النشيطة</p>
+                            <p class="value">234</p>
+                        </div>
+                        <div class="stat">
+                            <p class="label">المتابعون</p>
+                            <p class="value">1,234</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-achievements glass-effect">
+                    <h3>🏅 الإنجازات</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement">
+                            <div class="badge">🌟</div>
+                            <p>المستكشف الأول</p>
+                        </div>
+                        <div class="achievement">
+                            <div class="badge">🔍</div>
+                            <p>صياد الثقوب</p>
+                        </div>
+                        <div class="achievement">
+                            <div class="badge">📚</div>
+                            <p>دارس الفيزياء</p>
+                        </div>
+                        <div class="achievement">
+                            <div class="badge">🎨</div>
+                            <p>الفنان الفضائي</p>
+                        </div>
+                        <div class="achievement">
+                            <div class="badge">🚀</div>
+                            <p>رائد الفضاء</p>
+                        </div>
+                        <div class="achievement">
+                            <div class="badge">💎</div>
+                            <p>القادم قريباً</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="social-footer">
+            <p>👥 Social & Community - مجتمع المستكشفين</p>
+            <p>Join millions of space explorers worldwide</p>
+        </footer>
+    </div>
+
+    <script type="module" src="../utils/social-community.js"></script>
+</body>
+</html>

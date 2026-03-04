@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Visualizations - محاكاة متقدمة</title>
+    <link rel="stylesheet" href="../styles/advanced-viz.css">
+</head>
+<body>
+    <div class="advanced-container">
+        <!-- Navigation -->
+        <nav class="advanced-nav">
+            <div class="nav-brand">🎯 Advanced Visualizations</div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">الرئيسية</a>
+                <a href="#gravitational-waves" class="nav-link active">موجات الجاذبية</a>
+                <a href="#multi-blackhole" class="nav-link">ثقوب سوداء متعددة</a>
+                <a href="#event-horizon" class="nav-link">أفق الحدث</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="advanced-hero">
+            <div class="hero-content">
+                <h1>محاكاة فيزيائية متقدمة</h1>
+                <p>اكتشف أعظم الظواهر الكونية بتصور عالي الجودة</p>
+            </div>
+        </section>
+
+        <!-- Gravitational Waves -->
+        <section id="gravitational-waves" class="section">
+            <div class="section-header">
+                <h2>🌊 موجات الجاذبية</h2>
+                <p>محاكاة اصطدام النجوم النيوترونية وتأثيرها على الزمكان</p>
+            </div>
+
+            <div class="visualization-container">
+                <div class="viz-main glass-effect">
+                    <div class="viz-title">محكاة اصطدام النجوم النيوترونية</div>
+                    <canvas id="gravitational-wave-viz"></canvas>
+                </div>
+
+                <div class="viz-controls glass-effect">
+                    <div class="control-group">
+                        <label for="gw-mass1">كتلة النجم الأول (كتل شمسية)</label>
+                        <input type="range" id="gw-mass1" min="1" max="10" step="0.5" value="1.4">
+                        <span id="gw-mass1-value">1.4</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gw-mass2">كتلة النجم الثاني (كتل شمسية)</label>
+                        <input type="range" id="gw-mass2" min="1" max="10" step="0.5" value="1.6">
+                        <span id="gw-mass2-value">1.6</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gw-separation">المسافة الابتدائية (كم)</label>
+                        <input type="range" id="gw-separation" min="100" max="5000" step="100" value="1000">
+                        <span id="gw-separation-value">1000</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gw-speed">سرعة المحاكاة</label>
+                        <input type="range" id="gw-speed" min="0.1" max="10" step="0.1" value="1">
+                        <span id="gw-speed-value">1x</span>
+                    </div>
+
+                    <div class="control-buttons">
+                        <button class="btn-primary">تشغيل</button>
+                        <button class="btn-secondary">إيقاف مؤقت</button>
+                        <button class="btn-reset">إعادة تعيين</button>
+                    </div>
+
+                    <div class="wave-info">
+                        <p>تكرار الموجة: <span id="gw-frequency">100</span> Hz</p>
+                        <p>السعة: <span id="gw-amplitude">0.001</span></p>
+                        <p>الطاقة المشعة: <span id="gw-energy">0</span> erg/s</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multi Black Hole System -->
+        <section id="multi-blackhole" class="section">
+            <div class="section-header">
+                <h2>🔴 نظام ثقوب سوداء متعددة</h2>
+                <p>محاكاة تفاعل عدة ثقوب سوداء معاً</p>
+            </div>
+
+            <div class="visualization-container">
+                <div class="viz-main glass-effect">
+                    <div class="viz-title">نظام الثقوب السوداء الثنائية</div>
+                    <canvas id="multi-blackhole-viz"></canvas>
+                </div>
+
+                <div class="viz-controls glass-effect">
+                    <div class="control-group">
+                        <label for="bh-count">عدد الثقوب السوداء</label>
+                        <select id="bh-count">
+                            <option value="2">ثنائي</option>
+                            <option value="3">ثلاثي</option>
+                            <option value="4">رباعي</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="bh-mass-ratio">نسبة الكتلة</label>
+                        <input type="range" id="bh-mass-ratio" min="0.1" max="10" step="0.1" value="1">
+                        <span id="bh-mass-ratio-value">1:1</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="bh-orbital-period">فترة المدار (أيام)</label>
+                        <input type="range" id="bh-orbital-period" min="1" max="365" step="1" value="90">
+                        <span id="bh-orbital-period-value">90</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="bh-eccentricity">الانحراف المداري</label>
+                        <input type="range" id="bh-eccentricity" min="0" max="0.99" step="0.01" value="0.2">
+                        <span id="bh-eccentricity-value">0.2</span>
+                    </div>
+
+                    <div class="control-buttons">
+                        <button class="btn-primary">تشغيل</button>
+                        <button class="btn-secondary">إيقاف مؤقت</button>
+                        <button class="btn-reset">إعادة تعيين</button>
+                    </div>
+
+                    <div class="bh-info">
+                        <p>المسافة بينهما: <span id="bh-distance">1000</span> كم</p>
+                        <p>السرعة المدارية: <span id="bh-velocity">100</span> كم/ث</p>
+                        <p>الطاقة الكامنة: <span id="bh-potential">0</span> J</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Horizon Crossing -->
+        <section id="event-horizon" class="section">
+            <div class="section-header">
+                <h2>⚫ عبور أفق الحدث</h2>
+                <p>رحلة افتراضية داخل أفق حدث الثقب الأسود</p>
+            </div>
+
+            <div class="visualization-container">
+                <div class="viz-main glass-effect">
+                    <div class="viz-title">محاكاة عبور أفق الحدث</div>
+                    <canvas id="event-horizon-viz"></canvas>
+                </div>
+
+                <div class="viz-controls glass-effect">
+                    <div class="control-group">
+                        <label for="eh-mass">كتلة الثقب الأسود (كتل شمسية)</label>
+                        <input type="range" id="eh-mass" min="1" max="1000" step="10" value="10">
+                        <span id="eh-mass-value">10</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="eh-rotation">معامل الدوران</label>
+                        <input type="range" id="eh-rotation" min="0" max="1" step="0.1" value="0.5">
+                        <span id="eh-rotation-value">0.5</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="eh-approach-speed">سرعة الاقتراب (% من سرعة الضوء)</label>
+                        <input type="range" id="eh-approach-speed" min="10" max="99" step="1" value="50">
+                        <span id="eh-approach-speed-value">50%</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="eh-impact-parameter">معامل الضربة</label>
+                        <input type="range" id="eh-impact-parameter" min="0" max="100" step="1" value="50">
+                        <span id="eh-impact-parameter-value">50</span>
+                    </div>
+
+                    <div class="control-buttons">
+                        <button class="btn-primary">ابدأ الرحلة</button>
+                        <button class="btn-secondary">إيقاف مؤقت</button>
+                        <button class="btn-reset">إعادة تعيين</button>
+                    </div>
+
+                    <div class="eh-info">
+                        <p>نصف قطر شوارتسشيلد: <span id="eh-radius">3</span> كم</p>
+                        <p>سرعة الإفلات: <span id="eh-escape-velocity">100%</span> c</p>
+                        <p>تأثير الجاذبية: <span id="eh-tidal-force">0</span> G</p>
+                        <p>الزمن الإحداثي المتبقي: <span id="eh-time">∞</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accretion Disk Physics -->
+        <section id="accretion" class="section">
+            <div class="section-header">
+                <h2>💫 فيزياء قرص التراكم</h2>
+                <p>دراس تفاعلية لفيزياء المادة حول الثقب الأسود</p>
+            </div>
+
+            <div class="visualization-container">
+                <div class="viz-main glass-effect">
+                    <div class="viz-title">قرص التراكم</div>
+                    <canvas id="accretion-disk-viz"></canvas>
+                </div>
+
+                <div class="viz-controls glass-effect">
+                    <div class="control-group">
+                        <label for="ad-temperature">درجة الحرارة (K)</label>
+                        <input type="range" id="ad-temperature" min="1000" max="10000000" step="100000" value="1000000">
+                        <span id="ad-temperature-value">1,000,000</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="ad-spin">دوران الثقب الأسود</label>
+                        <input type="range" id="ad-spin" min="0" max="1" step="0.1" value="0.5">
+                        <span id="ad-spin-value">0.5</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="ad-density">كثافة المادة</label>
+                        <input type="range" id="ad-density" min="0.1" max="10" step="0.1" value="1">
+                        <span id="ad-density-value">1</span>
+                    </div>
+
+                    <div class="control-buttons">
+                        <button class="btn-primary">تشغيل</button>
+                        <button class="btn-secondary">إيقاف</button>
+                    </div>
+
+                    <div class="ad-info">
+                        <p>سرعة الدوران الداخلي: <span id="ad-inner-velocity">0</span> كم/ث</p>
+                        <p>معدل الاستقراء: <span id="ad-accretion-rate">0</span> M☉/سنة</p>
+                        <p>النوى المنبعثة: <span id="ad-radiation">0</span> erg/s</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="advanced-footer">
+            <p>🎯 Advanced Visualizations - استكشف حدود الكون</p>
+            <p>Based on general relativity and astrophysical simulations</p>
+        </footer>
+    </div>
+
+    <script type="module" src="../utils/advanced-visualizations.js"></script>
+</body>
+</html>

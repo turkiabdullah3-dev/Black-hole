@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Education - تعليم الفيزياء</title>
+    <link rel="stylesheet" href="../styles/physics-education.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+</head>
+<body>
+    <div class="physics-container">
+        <!-- Navigation -->
+        <nav class="physics-nav">
+            <div class="nav-brand">⚛️ Physics Education</div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">الرئيسية</a>
+                <a href="#lessons" class="nav-link active">الدروس</a>
+                <a href="#quiz" class="nav-link">الاختبارات</a>
+                <a href="#simulator" class="nav-link">محاكي الفيزياء</a>
+                <a href="#timeline" class="nav-link">التاريخ</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="physics-hero">
+            <div class="hero-content">
+                <h1>تعليم الفيزياء التفاعلي</h1>
+                <p>افهم قوانين الكون من خلال التجارب المرئية</p>
+            </div>
+        </section>
+
+        <!-- Interactive Lessons -->
+        <section id="lessons" class="section">
+            <div class="section-header">
+                <h2>📚 الدروس التفاعلية</h2>
+                <p>تعلم مفاهيم الفيزياء بطريقة بصرية وتفاعلية</p>
+            </div>
+
+            <div class="lessons-grid">
+                <!-- Lesson 1: Gravity -->
+                <div class="lesson-card glass-effect">
+                    <div class="lesson-visual">
+                        <canvas id="lesson-gravity"></canvas>
+                    </div>
+                    <div class="lesson-content">
+                        <h3>الجاذبية والقوة</h3>
+                        <div class="lesson-equation">
+                            $$F = G\frac{m_1 m_2}{r^2}$$
+                        </div>
+                        <p class="lesson-description">اكتشف كيف تجذب الأجسام بعضها بناءً على كتلتها والمسافة بينها</p>
+                        <button class="btn-lesson">ابدأ الدرس</button>
+                    </div>
+                </div>
+
+                <!-- Lesson 2: Relativity -->
+                <div class="lesson-card glass-effect">
+                    <div class="lesson-visual">
+                        <canvas id="lesson-relativity"></canvas>
+                    </div>
+                    <div class="lesson-content">
+                        <h3>النسبية الخاصة</h3>
+                        <div class="lesson-equation">
+                            $$E = mc^2$$
+                        </div>
+                        <p class="lesson-description">فهم العلاقة بين الطاقة والكتلة والسرعة</p>
+                        <button class="btn-lesson">ابدأ الدرس</button>
+                    </div>
+                </div>
+
+                <!-- Lesson 3: Quantum Mechanics -->
+                <div class="lesson-card glass-effect">
+                    <div class="lesson-visual">
+                        <canvas id="lesson-quantum"></canvas>
+                    </div>
+                    <div class="lesson-content">
+                        <h3>ميكانيكا الكم</h3>
+                        <div class="lesson-equation">
+                            $$\psi = \sqrt{\frac{1}{\pi a_0^3}}e^{-r/a_0}$$
+                        </div>
+                        <p class="lesson-description">استكشف عالم الجزيئات والذرات</p>
+                        <button class="btn-lesson">ابدأ الدرس</button>
+                    </div>
+                </div>
+
+                <!-- Lesson 4: Thermodynamics -->
+                <div class="lesson-card glass-effect">
+                    <div class="lesson-visual">
+                        <canvas id="lesson-thermo"></canvas>
+                    </div>
+                    <div class="lesson-content">
+                        <h3>الديناميكا الحرارية</h3>
+                        <div class="lesson-equation">
+                            $$\Delta U = Q - W$$
+                        </div>
+                        <p class="lesson-description">فهم الحرارة والطاقة والحركة</p>
+                        <button class="btn-lesson">ابدأ الدرس</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Mode -->
+        <section id="quiz" class="section">
+            <div class="section-header">
+                <h2>🎯 اختبر معلوماتك</h2>
+                <p>حل الاختبارات وقيّم مستوى فهمك</p>
+            </div>
+
+            <div class="quiz-section glass-effect">
+                <div class="quiz-selector">
+                    <button class="quiz-btn active" data-level="beginner">مبتدئ</button>
+                    <button class="quiz-btn" data-level="intermediate">متوسط</button>
+                    <button class="quiz-btn" data-level="advanced">متقدم</button>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p class="progress-text">السؤال 1 من 10</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>السؤال الأول</h3>
+                        <div class="question-text">ما هي سرعة الضوء في الفراغ؟</div>
+                        <div class="question-options">
+                            <label class="option">
+                                <input type="radio" name="answer" value="a">
+                                <span>3 × 10⁸ م/ث</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="answer" value="b">
+                                <span>3 × 10⁵ م/ث</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="answer" value="c">
+                                <span>3 × 10⁴ م/ث</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="answer" value="d">
+                                <span>3 × 10⁶ م/ث</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-buttons">
+                        <button class="btn-secondary">السابق</button>
+                        <button class="btn-primary">التالي</button>
+                    </div>
+                </div>
+
+                <div class="quiz-results hidden">
+                    <div class="results-content">
+                        <h2>النتائج</h2>
+                        <div class="score-display">
+                            <div class="score-number">85%</div>
+                            <p>ممتاز!</p>
+                        </div>
+                        <div class="results-stats">
+                            <p>الأسئلة الصحيحة: 8/10</p>
+                            <p>الوقت المستغرق: 5 دقائق</p>
+                        </div>
+                        <button class="btn-primary">إعادة الاختبار</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Physics Simulator -->
+        <section id="simulator" class="section">
+            <div class="section-header">
+                <h2>🔬 محاكي الفيزياء</h2>
+                <p>حقّق بنفسك مع القوانين الفيزيائية</p>
+            </div>
+
+            <div class="simulator-section">
+                <div class="simulator-controls glass-effect">
+                    <div class="control-group">
+                        <label for="sim-object-mass">كتلة الجسم (كغ)</label>
+                        <input type="number" id="sim-object-mass" min="1" max="1000" value="50">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="sim-gravity">الجاذبية (م/ث²)</label>
+                        <input type="number" id="sim-gravity" min="0.1" max="50" step="0.1" value="9.81">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="sim-velocity">السرعة الابتدائية (م/ث)</label>
+                        <input type="number" id="sim-velocity" min="0" max="100" value="0">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="sim-angle">الزاوية (درجة)</label>
+                        <input type="number" id="sim-angle" min="0" max="90" value="45">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="sim-friction">معامل الاحتكاك</label>
+                        <input type="number" id="sim-friction" min="0" max="1" step="0.01" value="0">
+                    </div>
+
+                    <button class="btn-primary">تشغيل المحاكاة</button>
+                    <button class="btn-secondary">إيقاف</button>
+                </div>
+
+                <div class="simulator-canvas glass-effect">
+                    <canvas id="simulator-view"></canvas>
+                    <div class="simulator-stats">
+                        <p>المسافة: <span id="stat-distance">0</span> م</p>
+                        <p>الارتفاع: <span id="stat-height">0</span> م</p>
+                        <p>السرعة: <span id="stat-velocity">0</span> م/ث</p>
+                        <p>الوقت: <span id="stat-time">0</span> ث</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline" class="section">
+            <div class="section-header">
+                <h2>⏳ تاريخ اكتشافات الفيزياء</h2>
+                <p>رحلة البشرية في فهم الكون</p>
+            </div>
+
+            <div class="timeline-history">
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">1687</div>
+                    <div class="timeline-content">
+                        <h3>إسحاق نيوتن</h3>
+                        <p>قانون الجاذبية العام والحركة</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">1865</div>
+                    <div class="timeline-content">
+                        <h3>جيمس كلارك ماكسويل</h3>
+                        <p>معادلات الكهرومغناطيسية</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">1905</div>
+                    <div class="timeline-content">
+                        <h3>ألبرت أينشتاين</h3>
+                        <p>النسبية الخاصة (E=mc²)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">1915</div>
+                    <div class="timeline-content">
+                        <h3>ألبرت أينشتاين</h3>
+                        <p>النسبية العامة والجاذبية</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">1925</div>
+                    <div class="timeline-content">
+                        <h3>ماكس بلانك وآخرون</h3>
+                        <p>ميكانيكا الكم</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">1942</div>
+                    <div class="timeline-content">
+                        <h3>إينريكو فيرمي</h3>
+                        <p>التفاعل النووي المتسلسل</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">1970</div>
+                    <div class="timeline-content">
+                        <h3>ستيفن هوكينج</h3>
+                        <p>إشعاع هوكينج والثقوب السوداء</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-effect">
+                    <div class="timeline-date">2015</div>
+                    <div class="timeline-content">
+                        <h3>تعاون LIGO</h3>
+                        <p>اكتشاف موجات الجاذبية</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="physics-footer">
+            <p>⚛️ Physics Education - تعلم الفيزياء بطريقة جديدة</p>
+            <p>Built with Three.js and WebGL</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+    <script type="module" src="../utils/physics-education.js"></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+/* Physics Calculator Styles */
+
+.calc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a4d 100%);
+}
+
+/* Navigation */
+.calc-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(10, 14, 39, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 220, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+    background: rgba(0, 255, 220, 0.1);
+}
+
+/* Hero Section */
+.calc-hero {
+    background: linear-gradient(135deg, #1a1a4d 0%, #2d1b4e 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.calc-hero h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(0, 255, 220, 0.5);
+}
+
+.calc-hero p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Calculator Sections */
+.calc-section {
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid rgba(0, 255, 220, 0.3);
+    border-radius: 16px;
+    background: rgba(10, 20, 50, 0.6);
+    backdrop-filter: blur(10px);
+    max-width: 900px;
+}
+
+.calc-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 1rem;
+}
+
+.calc-header h2 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.calc-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Form Styles */
+.calc-form {
+    margin: 1.5rem 0;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 255, 220, 0.3);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(0, 255, 220, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 220, 0.2);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Preset Buttons */
+.preset-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.preset-btn,
+.preset-velocity {
+    padding: 0.7rem 1.2rem;
+    background: rgba(150, 120, 255, 0.2);
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.preset-btn:hover,
+.preset-velocity:hover {
+    background: rgba(150, 120, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(150, 120, 255, 0.3);
+}
+
+/* Calculate Button */
+.btn-calculate {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-calculate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 220, 0.4);
+}
+
+.btn-calculate:active {
+    transform: translateY(-1px);
+}
+
+/* Result Container */
+.result-container {
+    margin: 2rem 0;
+    min-height: 80px;
+    padding: 1.5rem;
+    background: rgba(0, 255, 220, 0.05);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+}
+
+.result-card {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 220, 0.2);
+}
+
+.result-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.result-card .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-success);
+    margin-bottom: 0.5rem;
+}
+
+.result-card .detail {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
+}
+
+/* Formula Section */
+.formula {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(150, 120, 255, 0.05);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 8px;
+}
+
+.formula h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.formula p {
+    font-family: 'Courier New', monospace;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.8rem;
+    border-radius: 4px;
+    color: var(--color-success);
+    margin: 0.5rem 0;
+    overflow-x: auto;
+}
+
+.formula sub {
+    font-size: 0.85em;
+}
+
+.formula sup {
+    font-size: 0.85em;
+}
+
+.explanation {
+    font-family: var(--font-primary) !important;
+    color: var(--text-secondary) !important;
+    background: none !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* Summary Section */
+.summary-section {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 900px;
+}
+
+.summary-section h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.summary-table {
+    overflow-x: auto;
+}
+
+.summary-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.summary-table th {
+    background: rgba(0, 255, 220, 0.1);
+    color: var(--color-primary);
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid rgba(0, 255, 220, 0.2);
+}
+
+.summary-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 255, 220, 0.1);
+    color: var(--text-primary);
+}
+
+.summary-table tr:hover {
+    background: rgba(0, 255, 220, 0.05);
+}
+
+/* Footer */
+.calc-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(0, 255, 220, 0.2);
+    color: var(--text-secondary);
+}
+
+.calc-footer p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calc-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .calc-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+
+    .calc-section {
+        margin: 1rem auto;
+        padding: 1.5rem;
+    }
+
+    .preset-buttons {
+        flex-direction: column;
+    }
+
+    .preset-btn,
+    .preset-velocity {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .calc-container {
+        padding: 0;
+    }
+
+    .calc-hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .calc-section {
+        margin: 0.5rem;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .btn-calculate {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .result-card .value {
+        font-size: 1.3rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .calc-container {
+        background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        color: #333;
+    }
+
+    .calc-nav {
+        background: rgba(255, 255, 255, 0.8);
+        border-bottom-color: rgba(0, 150, 150, 0.2);
+    }
+
+    .nav-link {
+        color: #666;
+    }
+
+    .nav-link:hover {
+        color: #00ccaa;
+        background: rgba(0, 200, 200, 0.1);
+    }
+
+    .calc-section {
+        background: rgba(255, 255, 255, 0.7);
+        border-color: rgba(0, 200, 200, 0.3);
+    }
+
+    .form-group input,
+    .form-group select {
+        background: rgba(200, 200, 200, 0.2);
+        color: #333;
+    }
+}
